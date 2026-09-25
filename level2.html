@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 2: Narrow Lane Challenge - PARK IT!</title>
+  <meta name="description" content="Level 2 Narrow Road Parking Challenge page created with pure HTML and CSS.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================
+       NAVIGATION BAR
+       ========================================= -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-icon">🚗</span>
+        <span class="brand-text">PARK IT!</span>
+        <span class="brand-tag">Level 2</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="garage.html">Garage</a></li>
+          <li><a href="level1.html">Level 1</a></li>
+          <li><a href="level2.html" class="active">Level 2</a></li>
+          <li><a href="level3.html">Level 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================
+       PAGE HEADER
+       ========================================= -->
+  <section class="page-header">
+    <span class="level-meta-badge" style="background-color: #d97706; color: #fff;">Stage 2 of 3 &bull; Medium Difficulty</span>
+    <h1>Level 2: Narrow Lane &amp; Obstacles</h1>
+    <p>Watch out! The driving lane is narrow, hazard barriers are active, and only ONE parking space is valid.</p>
+  </section>
+
+  <!-- =========================================
+       MAIN CONTENT: LEVEL 2 PARKING ARENA
+       ========================================= -->
+  <main>
+    <div class="parking-arena">
+
+      <!-- Lane Alert Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; color: #cbd5e1; font-size: 0.85rem; font-weight: 700; margin-bottom: 15px; border-bottom: 2px solid #475569; padding-bottom: 8px;">
+        <span style="color: #f87171;">⚠️ WARNING: NARROW CORRIDOR AHEAD</span>
+        <span style="color: #facc15;">CAUTION: RESERVED BAYS ACTIVE</span>
+      </div>
+
+      <!-- Hazardous Construction Barrier Strip -->
+      <div class="road-barrier" style="margin-bottom: 18px;">
+        ROAD WORK &bull; CAUTION &bull; SLOW DOWN
+      </div>
+
+      <!-- Level 2 Grid: Start Zone | Obstacle Choke-Point | 2 Parking Spaces -->
+      <div class="level-grid" style="display: grid; grid-template-columns: 1fr 120px 1.4fr; gap: 18px; align-items: center;">
+
+        <!-- Zone 1: Player Start Area -->
+        <div style="background-color: #272f3d; border-radius: 8px; padding: 18px; text-align: center; border: 2px dashed #475569;">
+          <div style="color: #94a3b8; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">
+            Starting Lane
+          </div>
+
+          <div style="display: flex; justify-content: center; margin: 8px 0;">
+            <div class="car-topdown">
+              <div class="headlight headlight-left"></div>
+              <div class="headlight headlight-right"></div>
+              <div class="wheel wheel-front-left"></div>
+              <div class="wheel wheel-front-right"></div>
+              
+              <div class="windshield-front"></div>
+              <div class="car-roof"></div>
+              <div class="windshield-rear"></div>
+
+              <div class="wheel wheel-rear-left"></div>
+              <div class="wheel wheel-rear-right"></div>
+              <div class="taillight taillight-left"></div>
+              <div class="taillight taillight-right"></div>
+            </div>
+          </div>
+
+          <div style="font-size: 0.82rem; color: #facc15; font-weight: 700;">
+            Narrow Margin: &plusmn;0.5m
+          </div>
+        </div>
+
+        <!-- Zone 2: Obstacles & Traffic Cones in Choke Point -->
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
+          <!-- Cone 1 -->
+          <div class="traffic-cone"></div>
+          
+          <!-- Direction Arrow -->
+          <div class="direction-arrow" style="margin: 2px 0;">
+            <span>&rarr;</span>
+          </div>
+
+          <!-- Cone 2 -->
+          <div class="traffic-cone"></div>
+
+          <!-- Direction Arrow -->
+          <div class="direction-arrow" style="margin: 2px 0;">
+            <span>&rarr;</span>
+          </div>
+
+          <!-- Cone 3 -->
+          <div class="traffic-cone"></div>
+        </div>
+
+        <!-- Zone 3: TWO PARKING SPACES (One Reserved, One Correct Target) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+
+          <!-- Parking Bay 1: WRONG / RESERVED (Red) -->
+          <div class="parking-bay reserved-bay">
+            <span class="bay-label reserved-label">🚫 BAY A: RESERVED</span>
+            <div style="text-align: center; margin: 8px 0;">
+              <span style="font-size: 1.8rem;">⛔</span>
+              <div style="color: #f87171; font-size: 0.75rem; font-weight: 700; margin-top: 4px;">NO PARKING<br>Tow-Away Zone</div>
+            </div>
+          </div>
+
+          <!-- Parking Bay 2: CORRECT TARGET SPACE (Green) -->
+          <div class="parking-bay target-bay">
+            <span class="bay-label target-label">✅ BAY B: PARK HERE</span>
+            <div style="text-align: center; margin: 8px 0;">
+              <div style="width: 55px; height: 95px; border: 2px dashed #22c55e; border-radius: 6px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background-color: rgba(34, 197, 94, 0.1);">
+                <span style="font-size: 1.5rem; color: #22c55e;">🅿️</span>
+              </div>
+              <div style="color: #86efac; font-size: 0.75rem; font-weight: 700; margin-top: 6px;">Correct Slot</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Road divider lines -->
+      <div class="road-divider road-divider-white"></div>
+
+      <!-- Second Warning Barrier -->
+      <div class="road-barrier" style="margin-top: 10px;">
+        DO NOT CROSS YELLOW LINE &bull; KEEP RIGHT
+      </div>
+
+    </div>
+
+    <!-- Level Progression Button linking to level3.html -->
+    <div class="action-btn-area">
+      <a href="level1.html" class="btn-game btn-secondary">&larr; Back to Level 1</a>
+      <a href="level3.html" class="btn-game btn-primary">
+        NEXT LEVEL &rarr;
+      </a>
+    </div>
+  </main>
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+  <footer>
+    <p>&copy; 2026 PARK IT! &bull; College HTML &amp; CSS Web Development Assignment</p>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="garage.html">Garage</a>
+      <a href="level1.html">Level 1</a>
+      <a href="level2.html">Level 2</a>
+      <a href="level3.html">Level 3</a>
+    </div>
+  </footer>
+
+</body>
+</html>

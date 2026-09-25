@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 3: Night Parking Challenge - PARK IT!</title>
+  <meta name="description" content="Level 3 Night Parking Challenge page created with pure HTML and CSS.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="night-mode">
+
+  <!-- =========================================
+       NAVIGATION BAR
+       ========================================= -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-icon">🚗</span>
+        <span class="brand-text">PARK IT!</span>
+        <span class="brand-tag" style="background-color: #f59e0b;">Night Run</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="garage.html">Garage</a></li>
+          <li><a href="level1.html">Level 1</a></li>
+          <li><a href="level2.html">Level 2</a></li>
+          <li><a href="level3.html" class="active">Level 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================
+       PAGE HEADER
+       ========================================= -->
+  <section class="page-header">
+    <span class="level-meta-badge" style="background-color: #ef4444; color: #fff;">Final Stage &bull; Hardcore</span>
+    <h1>Level 3: Night Parking Challenge</h1>
+    <p>Zero daylight! Use your car's headlights and roadside street lamps to reverse into an ultra-tight parking bay.</p>
+  </section>
+
+  <!-- =========================================
+       MAIN CONTENT: LEVEL 3 NIGHT PARKING ARENA
+       ========================================= -->
+  <main>
+    <div class="parking-arena night-arena">
+
+      <!-- Night Road Ambience Header with Street Lamps -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #334155; padding-bottom: 12px;">
+        <!-- Street Light 1 (Pure CSS) -->
+        <div class="street-light">
+          <div class="lamp-bulb"></div>
+          <div class="lamp-pole"></div>
+          <div class="lamp-base"></div>
+        </div>
+
+        <div style="text-align: center;">
+          <span style="color: #fef08a; font-weight: 800; font-size: 0.95rem; letter-spacing: 1px;">
+            🌙 MIDNIGHT LOT &bull; LOW VISIBILITY
+          </span>
+          <div style="color: #94a3b8; font-size: 0.78rem;">Headlights Active &bull; Reverse Sensors Engaged</div>
+        </div>
+
+        <!-- Street Light 2 (Pure CSS) -->
+        <div class="street-light">
+          <div class="lamp-bulb"></div>
+          <div class="lamp-pole"></div>
+          <div class="lamp-base"></div>
+        </div>
+      </div>
+
+      <!-- Level 3 Grid: Driving Track | Multiple Obstacles | Tight Night Parking Space -->
+      <div class="level-grid" style="display: grid; grid-template-columns: 1fr 130px 1fr; gap: 20px; align-items: center;">
+
+        <!-- Section A: Player Car with Illuminated Headlights -->
+        <div style="background-color: #0d121d; border-radius: 8px; padding: 20px; text-align: center; border: 2px dashed #334155; position: relative;">
+          <div style="color: #cbd5e1; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px;">
+            Night Driver Position
+          </div>
+
+          <!-- Pure CSS Top-down Car with Headlight Glow -->
+          <div style="display: flex; justify-content: center; margin: 12px 0;">
+            <div class="car-topdown night-headlights">
+              <div class="headlight headlight-left"></div>
+              <div class="headlight headlight-right"></div>
+              <div class="wheel wheel-front-left"></div>
+              <div class="wheel wheel-front-right"></div>
+              
+              <div class="windshield-front"></div>
+              <div class="car-roof"></div>
+              <div class="windshield-rear"></div>
+
+              <div class="wheel wheel-rear-left"></div>
+              <div class="wheel wheel-rear-right"></div>
+              <div class="taillight taillight-left"></div>
+              <div class="taillight taillight-right"></div>
+            </div>
+          </div>
+
+          <div style="color: #fef08a; font-size: 0.82rem; font-weight: 700; margin-top: 8px;">
+            💡 High Beams Turned ON
+          </div>
+        </div>
+
+        <!-- Section B: Tight Slalom of Obstacles & Parking Arrows -->
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+          <!-- Obstacle 1: Hazard Cone -->
+          <div class="traffic-cone"></div>
+
+          <!-- Direction Arrow -->
+          <div class="direction-arrow">
+            <span>&darr;</span>
+          </div>
+
+          <!-- Obstacle 2: Hazard Striped Block -->
+          <div class="road-barrier" style="width: 100%; height: 18px; font-size: 0.65rem;">
+            STOP
+          </div>
+
+          <!-- Direction Arrow -->
+          <div class="direction-arrow">
+            <span>&rarr;</span>
+          </div>
+
+          <!-- Obstacle 3: Second Cone -->
+          <div class="traffic-cone"></div>
+        </div>
+
+        <!-- Section C: Tight Target Night Parking Bay -->
+        <div class="parking-bay target-bay" style="background-color: rgba(34, 197, 94, 0.08); border-width: 3px;">
+          <!-- Lamp illuminating the slot -->
+          <div class="street-light" style="margin-bottom: 6px;">
+            <div class="lamp-bulb" style="width: 14px; height: 14px;"></div>
+            <div class="lamp-pole" style="height: 12px;"></div>
+          </div>
+
+          <span class="bay-label target-label" style="font-size: 0.82rem;">
+            🅿️ TIGHT SLOT &bull; REVERSE IN
+          </span>
+
+          <p style="color: #86efac; font-size: 0.8rem; text-align: center; margin: 6px 0;">
+            Zero Error Margin<br>
+            <span style="font-size: 0.72rem; color: #94a3b8;">Parallel bay between curb posts</span>
+          </p>
+
+          <div style="width: 65px; height: 115px; border: 2px dashed #22c55e; border-radius: 6px; display: flex; align-items: center; justify-content: center; background-color: rgba(34, 197, 94, 0.12);">
+            <span style="font-size: 1.6rem; color: #22c55e;">🅿️</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Road divider line (Yellow Night Markings) -->
+      <div class="road-divider" style="border-top-color: #facc15; margin: 20px 0;"></div>
+
+      <!-- Bottom Street Lights Row -->
+      <div style="display: flex; justify-content: space-around; align-items: center;">
+        <div class="street-light">
+          <div class="lamp-bulb"></div>
+          <div class="lamp-pole"></div>
+          <div class="lamp-base"></div>
+        </div>
+        <div style="color: #94a3b8; font-size: 0.85rem; text-align: center;">
+          🏁 Final destination in sight. Align car to complete challenge!
+        </div>
+        <div class="street-light">
+          <div class="lamp-bulb"></div>
+          <div class="lamp-pole"></div>
+          <div class="lamp-base"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Final Level Action Button linking to complete.html -->
+    <div class="action-btn-area">
+      <a href="level2.html" class="btn-game btn-secondary">&larr; Back to Level 2</a>
+      <a href="complete.html" class="btn-game btn-primary">
+        COMPLETE PARKING &rarr;
+      </a>
+    </div>
+  </main>
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+  <footer>
+    <p>&copy; 2026 PARK IT! &bull; College HTML &amp; CSS Web Development Assignment</p>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="garage.html">Garage</a>
+      <a href="level1.html">Level 1</a>
+      <a href="level2.html">Level 2</a>
+      <a href="level3.html">Level 3</a>
+    </div>
+  </footer>
+
+</body>
+</html>

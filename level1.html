@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 1: Easy Parking - PARK IT!</title>
+  <meta name="description" content="Level 1 Easy Parking Challenge page created with pure HTML and CSS.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================
+       NAVIGATION BAR
+       ========================================= -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-icon">🚗</span>
+        <span class="brand-text">PARK IT!</span>
+        <span class="brand-tag">Level 1</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="garage.html">Garage</a></li>
+          <li><a href="level1.html" class="active">Level 1</a></li>
+          <li><a href="level2.html">Level 2</a></li>
+          <li><a href="level3.html">Level 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================
+       PAGE HEADER
+       ========================================= -->
+  <section class="page-header">
+    <span class="level-meta-badge">Stage 1 of 3</span>
+    <h1>Level 1: Easy Parking</h1>
+    <p>Follow the directional road arrows, bypass the 2 cones, and pull into Parking Slot 01.</p>
+  </section>
+
+  <!-- =========================================
+       MAIN CONTENT: LEVEL 1 PARKING ARENA
+       ========================================= -->
+  <main>
+    <div class="parking-arena">
+
+      <!-- Top Road Lane Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; color: #cbd5e1; font-size: 0.85rem; font-weight: 700; margin-bottom: 15px; border-bottom: 2px solid #475569; padding-bottom: 8px;">
+        <span>🛣️ TWO-WAY ACCESS ROAD</span>
+        <span style="color: #facc15;">SPEED LIMIT: 15 KM/H</span>
+      </div>
+
+      <!-- Road Grid / Arena Layout using CSS Grid -->
+      <div class="level-grid" style="display: grid; grid-template-columns: 1fr 140px 1fr; gap: 20px; align-items: center;">
+
+        <!-- Section A: Player Driving Zone (Start Lane) -->
+        <div style="background-color: #272f3d; border-radius: 8px; padding: 20px; text-align: center; border: 2px dashed #475569;">
+          <div style="color: #94a3b8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px;">
+            Starting Position
+          </div>
+
+          <!-- Pure CSS Player Car -->
+          <div style="display: flex; justify-content: center; margin: 10px 0;">
+            <div class="car-topdown">
+              <div class="headlight headlight-left"></div>
+              <div class="headlight headlight-right"></div>
+              <div class="wheel wheel-front-left"></div>
+              <div class="wheel wheel-front-right"></div>
+              
+              <div class="windshield-front"></div>
+              <div class="car-roof"></div>
+              <div class="windshield-rear"></div>
+
+              <div class="wheel wheel-rear-left"></div>
+              <div class="wheel wheel-rear-right"></div>
+              <div class="taillight taillight-left"></div>
+              <div class="taillight taillight-right"></div>
+            </div>
+          </div>
+
+          <div style="color: #38bdf8; font-size: 0.85rem; font-weight: 700; margin-top: 10px;">
+            Your Vehicle: Red Cruiser
+          </div>
+        </div>
+
+        <!-- Section B: Center Driving Corridor & 2 Obstacles -->
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+          <!-- Direction Arrow -->
+          <div class="direction-arrow">
+            <span>&rarr;</span>
+          </div>
+          <span class="arrow-label">DRIVE HERE</span>
+
+          <!-- Obstacle 1: Traffic Cone -->
+          <div style="text-align: center;">
+            <div class="traffic-cone"></div>
+            <div style="font-size: 0.75rem; color: #f97316; font-weight: 700; margin-top: 6px;">Cone #1</div>
+          </div>
+
+          <!-- Direction Arrow -->
+          <div class="direction-arrow">
+            <span>&rarr;</span>
+          </div>
+
+          <!-- Obstacle 2: Traffic Cone -->
+          <div style="text-align: center;">
+            <div class="traffic-cone"></div>
+            <div style="font-size: 0.75rem; color: #f97316; font-weight: 700; margin-top: 6px;">Cone #2</div>
+          </div>
+        </div>
+
+        <!-- Section C: Designated Target Parking Bay -->
+        <div class="parking-bay target-bay">
+          <span class="bay-label target-label">🅿️ SLOT 01 &bull; PARK HERE</span>
+          
+          <p style="color: #86efac; font-size: 0.85rem; text-align: center; margin: 10px 0;">
+            Target Parking Bay Area<br>
+            <span style="font-size: 0.75rem; color: #cbd5e1;">Align car within dashed green box</span>
+          </p>
+
+          <div style="width: 70px; height: 120px; border: 2px dashed #22c55e; border-radius: 8px; display: flex; align-items: center; justify-content: center; background-color: rgba(34, 197, 94, 0.08);">
+            <span style="font-size: 1.8rem; color: #22c55e;">🅿️</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Road divider line -->
+      <div class="road-divider"></div>
+
+      <!-- Level Status & Rules -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; color: #94a3b8; font-size: 0.85rem;">
+        <span>🎯 <strong>Objective:</strong> Guide the vehicle past both safety cones into Slot 01.</span>
+        <span style="color: #86efac;">Status: Path Clear &bull; Bay Open</span>
+      </div>
+
+    </div>
+
+    <!-- Level Progression Button linking to level2.html -->
+    <div class="action-btn-area">
+      <a href="garage.html" class="btn-game btn-secondary">&larr; Garage</a>
+      <a href="level2.html" class="btn-game btn-primary">
+        PARKED SUCCESSFULLY &rarr;
+      </a>
+    </div>
+  </main>
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+  <footer>
+    <p>&copy; 2026 PARK IT! &bull; College HTML &amp; CSS Web Development Assignment</p>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="garage.html">Garage</a>
+      <a href="level1.html">Level 1</a>
+      <a href="level2.html">Level 2</a>
+      <a href="level3.html">Level 3</a>
+    </div>
+  </footer>
+
+</body>
+</html>

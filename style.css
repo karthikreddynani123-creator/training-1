@@ -1,0 +1,853 @@
+/* ==========================================================================
+   PARK IT! – Car Parking Challenge
+   Course: Web Development Assignment
+   Technologies: ONLY Pure HTML & CSS (No JavaScript, No Frameworks)
+   Author: College Student Project
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL RESET & VARIABLES
+   Viva Tip: Using CSS variables for colors makes it easy to maintain and change 
+   themes across multiple pages.
+   -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Brand & Page Colors */
+  --bg-page: #f1f5f9;
+  --bg-page-night: #0b0f19;
+  --bg-nav: #0f172a;
+  --text-dark: #1e293b;
+  --text-light: #f8fafc;
+  --text-muted: #64748b;
+  
+  /* Road & Parking Colors */
+  --road-asphalt: #334155;
+  --road-asphalt-night: #181d27;
+  --road-curb: #cbd5e1;
+  --line-white: #ffffff;
+  --line-yellow: #facc15;
+  --slot-green: #22c55e;
+  --slot-red: #ef4444;
+
+  /* Car Colors */
+  --car-red: #dc2626;
+  --car-blue: #2563eb;
+  --car-yellow: #eab308;
+  --car-glass: #93c5fd;
+  --car-wheel: #111827;
+
+  /* Button Colors */
+  --btn-green: #16a34a;
+  --btn-green-hover: #15803d;
+  --btn-blue: #2563eb;
+  --btn-blue-hover: #1d4ed8;
+  --btn-amber: #d97706;
+
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-road: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Night theme for Level 3 */
+body.night-mode {
+  background-color: var(--bg-page-night);
+  color: var(--text-light);
+}
+
+body.night-mode .page-header h1 {
+  color: #f8fafc;
+}
+
+body.night-mode .page-header p {
+  color: #94a3b8;
+}
+
+body.night-mode .info-card {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border-color: #334155;
+}
+
+/* --------------------------------------------------------------------------
+   2. NAVIGATION BAR
+   Viva Tip: Flexbox is used to align the logo on the left and links on the right.
+   -------------------------------------------------------------------------- */
+header {
+  background-color: var(--bg-nav);
+  border-bottom: 3px solid #eab308;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+}
+
+.brand-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.brand-tag {
+  background-color: #eab308;
+  color: #0f172a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 7px 15px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #ffffff;
+  background-color: #1e293b;
+}
+
+.nav-menu a.active {
+  color: #0f172a;
+  background-color: #eab308;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   3. PAGE BANNER & HEADINGS
+   -------------------------------------------------------------------------- */
+.page-header {
+  max-width: 1050px;
+  margin: 22px auto 10px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. MAIN CONTAINER & BUTTONS
+   -------------------------------------------------------------------------- */
+main {
+  flex: 1;
+  max-width: 1050px;
+  width: 100%;
+  margin: 10px auto 35px;
+  padding: 0 20px;
+}
+
+/* Action button styles */
+.action-btn-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.btn-game {
+  display: inline-block;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--btn-green);
+  color: #ffffff;
+  border-color: #22c55e;
+}
+
+.btn-primary:hover {
+  background-color: var(--btn-green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(22, 163, 74, 0.4);
+}
+
+.btn-blue {
+  background-color: var(--btn-blue);
+  color: #ffffff;
+  border-color: #3b82f6;
+}
+
+.btn-blue:hover {
+  background-color: var(--btn-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.4);
+}
+
+.btn-secondary {
+  background-color: #64748b;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #475569;
+}
+
+/* --------------------------------------------------------------------------
+   5. CAR DESIGN USING PURE HTML & CSS (No JavaScript)
+   Viva Tip:
+   - The car is built purely out of HTML <div> elements.
+   - border-radius curves the car body and windshield.
+   - absolute positioning places the 4 wheels and headlights.
+   -------------------------------------------------------------------------- */
+
+/* TOP-DOWN VIEW CAR (Used in Parking Arenas & Levels) */
+.car-topdown {
+  position: relative;
+  width: 60px;
+  height: 110px;
+  background-color: var(--car-red);
+  border-radius: 12px 12px 8px 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  border: 2px solid #7f1d1d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.car-topdown.blue-car {
+  background-color: var(--car-blue);
+  border-color: #1e3a8a;
+}
+
+.car-topdown.yellow-car {
+  background-color: var(--car-yellow);
+  border-color: #854d0e;
+}
+
+/* Front windshield */
+.car-topdown .windshield-front {
+  width: 44px;
+  height: 18px;
+  background-color: var(--car-glass);
+  border-radius: 6px 6px 2px 2px;
+  margin-top: 14px;
+  border: 1px solid #1e293b;
+}
+
+/* Car roof */
+.car-topdown .car-roof {
+  width: 44px;
+  height: 28px;
+  background-color: rgba(0, 0, 0, 0.15);
+  margin-top: 3px;
+  border-radius: 2px;
+}
+
+/* Rear windshield */
+.car-topdown .windshield-rear {
+  width: 44px;
+  height: 12px;
+  background-color: var(--car-glass);
+  border-radius: 2px 2px 5px 5px;
+  margin-top: 3px;
+  border: 1px solid #1e293b;
+}
+
+/* Car wheels (positioned at 4 corners) */
+.car-topdown .wheel {
+  position: absolute;
+  width: 8px;
+  height: 18px;
+  background-color: var(--car-wheel);
+  border-radius: 3px;
+  border: 1px solid #000;
+}
+
+.car-topdown .wheel-front-left { top: 12px; left: -6px; }
+.car-topdown .wheel-front-right { top: 12px; right: -6px; }
+.car-topdown .wheel-rear-left { bottom: 12px; left: -6px; }
+.car-topdown .wheel-rear-right { bottom: 12px; right: -6px; }
+
+/* Headlights */
+.car-topdown .headlight {
+  position: absolute;
+  top: 2px;
+  width: 10px;
+  height: 6px;
+  background-color: #fef08a;
+  border-radius: 3px 3px 1px 1px;
+}
+
+.car-topdown .headlight-left { left: 8px; }
+.car-topdown .headlight-right { right: 8px; }
+
+/* Taillights */
+.car-topdown .taillight {
+  position: absolute;
+  bottom: 2px;
+  width: 10px;
+  height: 5px;
+  background-color: #ef4444;
+  border-radius: 1px 1px 3px 3px;
+}
+
+.car-topdown .taillight-left { left: 8px; }
+.car-topdown .taillight-right { right: 8px; }
+
+/* Night mode headlights beam glow */
+.car-topdown.night-headlights .headlight {
+  background-color: #fffbeb;
+  box-shadow: 0 -15px 25px rgba(254, 240, 138, 0.95);
+}
+
+/* --------------------------------------------------------------------------
+   SIDE VIEW CAR (Used in Home Page Showcase)
+   -------------------------------------------------------------------------- */
+.car-sideview {
+  position: relative;
+  width: 220px;
+  height: 80px;
+  margin: 15px auto;
+}
+
+.car-sideview .car-cabin {
+  position: absolute;
+  top: 4px;
+  left: 45px;
+  width: 110px;
+  height: 38px;
+  background-color: var(--car-red);
+  border-radius: 25px 25px 0 0;
+  border: 2px solid #991b1b;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10px;
+}
+
+.car-sideview .car-window {
+  width: 38px;
+  height: 22px;
+  background-color: var(--car-glass);
+  border-radius: 10px 4px 0 0;
+  border: 1px solid #1e293b;
+}
+
+.car-sideview .car-lower-body {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  width: 220px;
+  height: 38px;
+  background-color: var(--car-red);
+  border-radius: 12px 16px 6px 8px;
+  border: 2px solid #991b1b;
+}
+
+.car-sideview .side-headlight {
+  position: absolute;
+  top: 8px;
+  right: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: #fef08a;
+  border-radius: 4px;
+}
+
+.car-sideview .side-taillight {
+  position: absolute;
+  top: 8px;
+  left: 4px;
+  width: 10px;
+  height: 12px;
+  background-color: #ef4444;
+  border-radius: 4px;
+}
+
+.car-sideview .side-wheel {
+  position: absolute;
+  bottom: 0;
+  width: 38px;
+  height: 38px;
+  background-color: var(--car-wheel);
+  border-radius: 50%;
+  border: 3px solid #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.car-sideview .side-wheel::after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  background-color: #94a3b8;
+  border-radius: 50%;
+}
+
+.car-sideview .side-wheel-front { right: 26px; }
+.car-sideview .side-wheel-rear { left: 26px; }
+
+/* --------------------------------------------------------------------------
+   6. ROAD & PARKING LOT DESIGN (CSS Grid & Flexbox)
+   Viva Tip:
+   - Road surface is styled with asphalt grey.
+   - Dashed lane lines created using CSS border or linear-gradient.
+   - Parking bays have dashed boundary lines.
+   -------------------------------------------------------------------------- */
+.parking-arena {
+  background-color: var(--road-asphalt);
+  border-radius: 12px;
+  border: 6px solid #475569;
+  box-shadow: var(--shadow-road);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Night theme for parking arena */
+.parking-arena.night-arena {
+  background-color: var(--road-asphalt-night);
+  border-color: #1e293b;
+}
+
+/* Road center lines */
+.road-divider {
+  width: 100%;
+  height: 4px;
+  border-top: 4px dashed var(--line-yellow);
+  margin: 20px 0;
+}
+
+.road-divider-white {
+  border-top-color: var(--line-white);
+}
+
+/* Parking Space Bay */
+.parking-bay {
+  border: 3px dashed #ffffff;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Correct Target Parking Bay */
+.parking-bay.target-bay {
+  border-color: var(--slot-green);
+  background-color: rgba(34, 197, 94, 0.12);
+}
+
+.bay-label {
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.bay-label.target-label {
+  color: #86efac;
+  border: 1px solid #22c55e;
+}
+
+/* Reserved / Wrong Parking Bay */
+.parking-bay.reserved-bay {
+  border-color: var(--slot-red);
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.bay-label.reserved-label {
+  color: #fca5a5;
+  border: 1px solid #ef4444;
+}
+
+/* --------------------------------------------------------------------------
+   7. OBSTACLES & DIRECTION ARROWS
+   Viva Tip:
+   - Cones and barriers are pure CSS elements created with borders and stripes.
+   -------------------------------------------------------------------------- */
+
+/* Traffic Cone */
+.traffic-cone {
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 30px solid #f97316;
+  position: relative;
+  margin: 6px auto;
+  display: inline-block;
+}
+
+/* Base of traffic cone */
+.traffic-cone::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: -18px;
+  width: 36px;
+  height: 8px;
+  background-color: #1e293b;
+  border-radius: 2px;
+}
+
+/* White reflective safety stripe on cone */
+.traffic-cone::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: -8px;
+  width: 16px;
+  height: 6px;
+  background-color: #ffffff;
+}
+
+/* Road Barrier with warning hazard stripes */
+.road-barrier {
+  height: 22px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #facc15,
+    #facc15 12px,
+    #1e293b 12px,
+    #1e293b 24px
+  );
+  border: 2px solid #0f172a;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* Direction Arrow indicator */
+.direction-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #facc15;
+  font-size: 1.5rem;
+  font-weight: 800;
+  animation: pulse-arrow 1.5s infinite alternate;
+}
+
+.arrow-label {
+  font-size: 0.85rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@keyframes pulse-arrow {
+  from { opacity: 0.7; transform: translateY(-2px); }
+  to { opacity: 1; transform: translateY(2px); }
+}
+
+/* Street light for Night Level */
+.street-light {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lamp-bulb {
+  width: 18px;
+  height: 18px;
+  background-color: #fef08a;
+  border-radius: 50%;
+  box-shadow: 0 0 25px 10px rgba(254, 240, 138, 0.7);
+  border: 2px solid #ffffff;
+}
+
+.lamp-pole {
+  width: 4px;
+  height: 25px;
+  background-color: #64748b;
+}
+
+.lamp-base {
+  width: 16px;
+  height: 4px;
+  background-color: #334155;
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   8. INFO CARDS & DASHBOARDS
+   -------------------------------------------------------------------------- */
+.info-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.level-meta-badge {
+  display: inline-block;
+  background-color: #0f172a;
+  color: #facc15;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.level-title-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+body.night-mode .level-title-text {
+  color: #ffffff;
+}
+
+/* Garage card grid */
+.garage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.garage-card {
+  background-color: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.garage-card:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+}
+
+.garage-card.selected-car {
+  border-color: #16a34a;
+  background-color: #f0fdf4;
+}
+
+.car-badge-active {
+  background-color: #16a34a;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  align-self: center;
+  margin-bottom: 10px;
+}
+
+.car-spec-list {
+  list-style: none;
+  margin: 15px 0;
+  text-align: left;
+  font-size: 0.88rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.car-spec-list li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 4px;
+}
+
+/* Completion summary scorecard */
+.scorecard-box {
+  background-color: #ffffff;
+  border: 3px solid #16a34a;
+  border-radius: 14px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  max-width: 650px;
+  margin: 20px auto;
+}
+
+.scorecard-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.stat-item {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.stat-item .val {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #16a34a;
+}
+
+.stat-item .label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   9. FOOTER
+   -------------------------------------------------------------------------- */
+footer {
+  background-color: var(--bg-nav);
+  border-top: 1px solid #334155;
+  padding: 20px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.88rem;
+  margin-top: auto;
+}
+
+.footer-nav {
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.footer-nav a:hover {
+  color: #eab308;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   10. RESPONSIVE DESIGN (Media Queries)
+   Viva Tip:
+   - On tablets and mobile screens (<= 768px), grids switch to 1 column.
+   - Parking bays and road layout stack cleanly without overflow.
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-menu {
+    justify-content: center;
+  }
+
+  .garage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scorecard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .parking-arena {
+    padding: 16px;
+  }
+
+  .level-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .btn-game {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garage - PARK IT! Car Parking Challenge</title>
+  <meta name="description" content="Vehicle selection garage page created with pure HTML and CSS.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================
+       NAVIGATION BAR
+       ========================================= -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-icon">🚗</span>
+        <span class="brand-text">PARK IT!</span>
+        <span class="brand-tag">Garage</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="garage.html" class="active">Garage</a></li>
+          <li><a href="level1.html">Level 1</a></li>
+          <li><a href="level2.html">Level 2</a></li>
+          <li><a href="level3.html">Level 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================
+       PAGE HEADER
+       ========================================= -->
+  <section class="page-header">
+    <h1>Driver's Garage</h1>
+    <p>Choose your parking challenge vehicle before entering the parking lots.</p>
+  </section>
+
+  <!-- =========================================
+       MAIN CONTENT: GARAGE VEHICLES
+       ========================================= -->
+  <main>
+    <div class="garage-grid">
+
+      <!-- Car 1: Red Cruiser (Selected Player Car) -->
+      <article class="garage-card selected-car">
+        <span class="car-badge-active">✓ Selected Car</span>
+        <h3 style="font-size: 1.25rem; color: #1e293b; margin-bottom: 12px;">Red Cruiser GT</h3>
+
+        <!-- Pure CSS Top-down Car -->
+        <div style="display: flex; justify-content: center; margin: 15px 0;">
+          <div class="car-topdown">
+            <div class="headlight headlight-left"></div>
+            <div class="headlight headlight-right"></div>
+            <div class="wheel wheel-front-left"></div>
+            <div class="wheel wheel-front-right"></div>
+            
+            <div class="windshield-front"></div>
+            <div class="car-roof"></div>
+            <div class="windshield-rear"></div>
+
+            <div class="wheel wheel-rear-left"></div>
+            <div class="wheel wheel-rear-right"></div>
+            <div class="taillight taillight-left"></div>
+            <div class="taillight taillight-right"></div>
+          </div>
+        </div>
+
+        <ul class="car-spec-list">
+          <li>
+            <span style="color: #64748b;">Top Speed:</span>
+            <strong>160 km/h</strong>
+          </li>
+          <li>
+            <span style="color: #64748b;">Handling:</span>
+            <strong style="color: #16a34a;">Balanced (8/10)</strong>
+          </li>
+          <li>
+            <span style="color: #64748b;">Turning Radius:</span>
+            <strong>4.8 meters</strong>
+          </li>
+          <li>
+            <span style="color: #64748b;">Difficulty:</span>
+            <strong style="color: #2563eb;">Easy / Novice</strong>
+          </li>
+        </ul>
+
+        <div style="margin-top: auto; padding-top: 10px;">
+          <span style="display: inline-block; width: 100%; padding: 8px 0; background-color: #16a34a; color: #fff; font-weight: 700; border-radius: 6px; font-size: 0.9rem;">
+            READY TO PARK
+          </span>
+        </div>
+      </article>
+
+      <!-- Car 2: Blue Turbo Sedan -->
+      <article class="garage-card">
+        <span style="background-color: #e2e8f0; color: #475569; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; align-self: center; margin-bottom: 10px;">
+          Vehicle 2
+        </span>
+        <h3 style="font-size: 1.25rem; color: #1e293b; margin-bottom: 12px;">Blue Turbo Sedan</h3>
+
+        <!-- Pure CSS Top-down Blue Car -->
+        <div style="display: flex; justify-content: center; margin: 15px 0;">
+          <div class="car-topdown blue-car">
+            <div class="headlight headlight-left"></div>
+            <div class="headlight headlight-right"></div>
+            <div class="wheel wheel-front-left"></div>
+            <div class="wheel wheel-front-right"></div>
+            
+            <div class="windshield-front"></div>
+            <div class="car-roof"></div>
+            <div class="windshield-rear"></div>
+
+            <div class="wheel wheel-rear-left"></div>
+            <div class="wheel wheel-rear-right"></div>
+            <div class="taillight taillight-left"></div>
+            <div class="taillight taillight-right"></div>
+          </div>
+        </div>
+
+        <ul class="car-spec-list">
+          <li>
+            <span style="color: #64748b;">Top Speed:</span>
+            <strong>190 km/h</strong>
+          </li>
+          <li>
+            <span style="color: #64748b;">Handling:</span>
+            <strong style="color: #2563eb;">Sharp (9/10)</strong>
+          </li>
+          <li>
+            <span style="color: #64748b;">Turning Radius:</span>
+            <strong>5.2 meters</strong>
+          </li>
+          <li>
+            <span style="color: #64748b;">Difficulty:</span>
+            <strong style="color: #d97706;">Moderate</strong>
+          </li>
+        </ul>
+
+        <div style="margin-top: auto; padding-top: 10px;">
+          <span style="display: inline-block; width: 100%; padding: 8px 0; background-color: #e2e8f0; color: #475569; font-weight: 700; border-radius: 6px; font-size: 0.9rem;">
+            IN FLEET
+          </span>
+        </div>
+      </article>
+
+      <!-- Car 3: Yellow Compact Mini -->
+      <article class="garage-card">
+        <span style="background-color: #e2e8f0; color: #475569; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; align-self: center; margin-bottom: 10px;">
+          Vehicle 3
+        </span>
+        <h3 style="font-size: 1.25rem; color: #1e293b; margin-bottom: 12px;">Yellow Compact</h3>
+
+        <!-- Pure CSS Top-down Yellow Car -->
+        <div style="display: flex; justify-content: center; margin: 15px 0;">
+          <div class="car-topdown yellow-car">
+            <div class="headlight headlight-left"></div>
+            <div class="headlight headlight-right"></div>
+            <div class="wheel wheel-front-left"></div>
+            <div class="wheel wheel-front-right"></div>
+            
+            <div class="windshield-front"></div>
+            <div class="car-roof"></div>
+            <div class="windshield-rear"></div>
+
+            <div class="wheel wheel-rear-left"></div>
+            <div class="wheel wheel-rear-right"></div>
+            <div class="taillight taillight-left"></div>
+            <div class="taillight taillight-right"></div>
+          </div>
+        </div>
+
+        <ul class="car-spec-list">
+          <li>
+            <span style="color: #64748b;">Top Speed:</span>
+            <strong>140 km/h</strong>
+          </li>
+          <li>
+            <span style="color: #64748b;">Handling:</span>
+            <strong style="color: #16a34a;">Agile (10/10)</strong>
+          </li>
+          <li>
+            <span style="color: #64748b;">Turning Radius:</span>
+            <strong>4.1 meters</strong>
+          </li>
+          <li>
+            <span style="color: #64748b;">Difficulty:</span>
+            <strong style="color: #16a34a;">Compact / Quick</strong>
+          </li>
+        </ul>
+
+        <div style="margin-top: auto; padding-top: 10px;">
+          <span style="display: inline-block; width: 100%; padding: 8px 0; background-color: #e2e8f0; color: #475569; font-weight: 700; border-radius: 6px; font-size: 0.9rem;">
+            IN FLEET
+          </span>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Garage Action Button -->
+    <div class="action-btn-area">
+      <a href="index.html" class="btn-game btn-secondary">&larr; Back to Home</a>
+      <a href="level1.html" class="btn-game btn-primary">
+        START LEVEL 1 &rarr;
+      </a>
+    </div>
+  </main>
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+  <footer>
+    <p>&copy; 2026 PARK IT! &bull; College HTML &amp; CSS Web Development Assignment</p>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="garage.html">Garage</a>
+      <a href="level1.html">Level 1</a>
+      <a href="level2.html">Level 2</a>
+      <a href="level3.html">Level 3</a>
+    </div>
+  </footer>
+
+</body>
+</html>

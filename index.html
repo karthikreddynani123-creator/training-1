@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARK IT! – Car Parking Challenge</title>
+  <meta name="description" content="A browser-based car parking challenge game built using only pure HTML and CSS.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================
+       NAVIGATION BAR (Consistent across all pages)
+       ========================================= -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-icon">🚗</span>
+        <span class="brand-text">PARK IT!</span>
+        <span class="brand-tag">Challenge</span>
+      </a>
+
+      <!-- Page navigation without JavaScript -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="garage.html">Garage</a></li>
+          <li><a href="level1.html">Level 1</a></li>
+          <li><a href="level2.html">Level 2</a></li>
+          <li><a href="level3.html">Level 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================
+       PAGE HEADER / HERO BANNER
+       ========================================= -->
+  <section class="page-header">
+    <h1>PARK IT! – Car Parking Challenge</h1>
+    <p>Test your parking precision across multiple stages. Built exclusively using pure HTML &amp; CSS!</p>
+  </section>
+
+  <!-- =========================================
+       MAIN CONTENT
+       ========================================= -->
+  <main>
+    <div class="info-card" style="text-align: center; max-width: 750px; margin: 0 auto;">
+      <span class="level-meta-badge">🎮 Web Development Project</span>
+      <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: #1e293b;">Welcome, Driver!</h2>
+      <p style="color: #64748b; font-size: 1rem; margin-bottom: 20px;">
+        Can you maneuver your vehicle into designated parking bays without hitting roadblocks, traffic cones, or taking reserved spots? Progress from the basic test track to an advanced night-parking challenge!
+      </p>
+
+      <!-- Pure HTML & CSS Car Illustration (No JavaScript, No Images) -->
+      <div style="background-color: #e2e8f0; border-radius: 12px; padding: 25px 15px; margin: 15px 0; border: 2px dashed #94a3b8;">
+        <div style="font-size: 0.85rem; font-weight: 700; color: #475569; text-transform: uppercase; margin-bottom: 8px;">
+          Vehicle Preview &bull; HTML &amp; CSS Illustration
+        </div>
+        
+        <div class="car-sideview">
+          <!-- Car Cabin & Windows -->
+          <div class="car-cabin">
+            <div class="car-window"></div>
+            <div class="car-window"></div>
+          </div>
+          <!-- Car Lower Body & Lights -->
+          <div class="car-lower-body">
+            <div class="side-taillight"></div>
+            <div class="side-headlight"></div>
+          </div>
+          <!-- 2 Wheels with Rims -->
+          <div class="side-wheel side-wheel-rear"></div>
+          <div class="side-wheel side-wheel-front"></div>
+        </div>
+
+        <div style="font-size: 0.82rem; color: #64748b; margin-top: 10px;">
+          Red Cruiser GT &bull; Built with CSS <code>&lt;div&gt;</code> &amp; <code>border-radius</code>
+        </div>
+      </div>
+
+      <!-- Game Rules Grid -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; text-align: left;">
+        <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px;">
+          <div style="font-size: 1.2rem;">🅿️ 1. Find the Bay</div>
+          <div style="font-size: 0.82rem; color: #64748b; margin-top: 4px;">Look for the green target parking slot marked on the road.</div>
+        </div>
+        <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px;">
+          <div style="font-size: 1.2rem;">🚧 2. Avoid Cones</div>
+          <div style="font-size: 0.82rem; color: #64748b; margin-top: 4px;">Steer clear of orange hazard cones and yellow barriers.</div>
+        </div>
+        <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px;">
+          <div style="font-size: 1.2rem;">🏁 3. Clear 3 Levels</div>
+          <div style="font-size: 0.82rem; color: #64748b; margin-top: 4px;">Advance from Day Parking to the tight Night Parking stage.</div>
+        </div>
+      </div>
+
+      <!-- Start Button linking to garage.html -->
+      <div class="action-btn-area">
+        <a href="garage.html" class="btn-game btn-primary">
+          START PARKING &rarr;
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+  <footer>
+    <p>&copy; 2026 PARK IT! &bull; College HTML &amp; CSS Web Development Assignment</p>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="garage.html">Garage</a>
+      <a href="level1.html">Level 1</a>
+      <a href="level2.html">Level 2</a>
+      <a href="level3.html">Level 3</a>
+    </div>
+  </footer>
+
+</body>
+</html>
